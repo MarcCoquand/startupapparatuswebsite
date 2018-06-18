@@ -1,0 +1,30 @@
+{
+  "name": "public",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@hyperapp/fx": "^0.7.0",
+    "hyperapp": "^1.2.6",
+    "jsx-transform": "^2.4.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.0.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-jest": "^21.17.0",
+    "hyperapp-redux-devtools": "^1.1.6",
+    "jest": "^23.1.0",
+    "node-sass": "^4.9.0",
+    "parcel-bundler": "^1.8.1",
+    "regenerator-runtime": "^0.11.1"
+  },
+  "scripts": {
+    "build": "parcel build index.html",
+    "start": "parcel index.html",
+    "test": "jest --watchAll"
+  }
+}

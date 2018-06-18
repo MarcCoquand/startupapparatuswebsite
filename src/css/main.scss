@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+
+@font-face {
+  font-family: "Orkley";
+  src: url(https://firebasestorage.googleapis.com/v0/b/startupapparatus.appspot.com/o/Orkney-Regular.ttf?alt=media&token=6c5b9ea6-330a-4dbf-97ec-ac74d595a30e)
+    format("truetype");
+}
+
+$font-paragraph: "Orkley", sans-serif;
+$font-mono: "Source Code Pro", monospace;
+
+h1 {
+  font: 100% $font-mono;
+  font-family: "Source Code Pro" monospace;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+h2 {
+  font: 100% $font-paragraph;
+  margin-top: 0;
+}
+
+.terminalBody {
+  font: 100% $font-mono;
+  font-family: "Source Code Pro" monospace;
+}
+
+body {
+  font: 100% $font-paragraph;
+}
