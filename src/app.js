@@ -2,6 +2,9 @@ import { h, app } from "hyperapp";
 import terminal from "./ components/terminal";
 import { switchcaseF, switchcase } from "./utils";
 import "./css/main"
+import logoImg1x from "./assets/logo.png"
+import logoImg2x from "./assets/logo-2x.png"
+import logoImg3x from "./assets/logo-3x.png"
 
 export const state = {
   width: window.innerWidth,
@@ -20,10 +23,13 @@ export const actions = {
 };
 
 export const view = (state, actions) => (
-  <main>
-    <h1>This is a heading</h1>
-    <h2>Helping startups with tech and design</h2>
-    <p>Here's some paragraph text</p>
+  <main class="landing-page" style={{width: state.width, height: state.height}} >
+    <img class="logo item-a" src={logoImg1x} srcset={logoImg1x + ' 1x,' + logoImg2x + ' 2x,' + logoImg3x + ' 3x' }/>
+    <h1 class="item-b">Startup Apparatus</h1>
+    <h2 class="item-c">Helping startups with tech and design</h2>
+
+    <p class="quicklinks">Here's some paragraph text</p>
     <terminal.view class="terminalBody" state={state.terminal} />
+    <a href="#" class="scroll-down"></a>
   </main>
 );

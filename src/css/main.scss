@@ -9,11 +9,55 @@
 $font-paragraph: "Orkley", sans-serif;
 $font-mono: "Source Code Pro", monospace;
 
+body{
+  margin: 0;
+}
+
 h1 {
   font: 100% $font-mono;
   font-family: "Source Code Pro" monospace;
   text-transform: uppercase;
   margin-bottom: 0.3rem;
+}
+
+.title {
+  display: inline-grid;
+  grid-column-gap: 2rem;
+  grid-template-columns: 2rem auto;
+}
+
+.landing-page .item-a {
+  grid-column-start: 1;
+}
+
+.landing-page .item-b {
+  grid-column-start: 2;
+}
+.landing-page .item-c {
+  grid-column-start: 2;
+
+}
+
+.landing-page {
+  background-color: #414042;
+  color: white;
+  display: grid;
+  justify-content: stretch;
+  grid-template-columns: 3rem auto;
+  grid-template-rows: 2rem 2rem 3rem auto 7rem;
+
+}
+
+.quicklinks {
+  grid-column-start: 2;
+}
+
+.logo {
+  width: 1.8rem;
+  grid-row: 1;
+  grid-row-end: 3;
+  justify-self: center;
+  align-self: start;
 }
 
 h2 {
@@ -24,8 +68,65 @@ h2 {
 .terminalBody {
   font: 100% $font-mono;
   font-family: "Source Code Pro" monospace;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  align-self: end;
 }
 
 body {
   font: 100% $font-paragraph;
+}
+
+.scroll-down {
+  opacity: 1;
+  -webkit-transition: all .5s ease-in 3s;
+  transition: all .5s ease-in 3s;
+}
+
+.scroll-down {
+  place-self: center;
+  margin: auto;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  width: 32px;
+  height: 32px;
+  z-index: 2;
+  -webkit-animation: bounce 2s infinite 2s;
+  animation: bounce 2s infinite 2s;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.scroll-down:before {
+    top: calc(50% - 8px);
+    left: calc(50% - 6px);
+    transform: rotate(-45deg);
+    display: block;
+    width: 12px;
+    height: 12px;
+    content: "";
+    border: 2px solid white;
+    border-width: 0px 0 2px 2px;
+}
+
+@keyframes bounce {
+  0%,
+  100%,
+  20%,
+  50%,
+  80% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  60% {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
 }

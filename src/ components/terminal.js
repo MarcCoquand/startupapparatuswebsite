@@ -133,16 +133,16 @@ const actions = {
     })(invalidTodo)(state.todo)
 };
 
-const RenderSingleItem = ({ item }) => <p>{item}</p>;
+const RenderSingleItem = ({ item, opacity }) => <p style={{opacity: opacity}}>{item}</p>;
 const RenderHistory = ({ history }) => {
-  return history.map(i => <RenderSingleItem item={i} />);
+  return history.map((it, index) => <RenderSingleItem item={it} opacity={(index+2)/(history.length+1)} />);
 };
 
 const view = ({ state }) => (
-  <ul class="terminalBody">
+  <div class="terminalBody" style={{padding: "1rem", maxWidth: state.width}}>
     <RenderHistory history={state.history} />
     <RenderSingleItem item={state.toWrite} />
-  </ul>
+  </div>
 );
 
 export default (process.env.NODE_ENV !== "test"
