@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@hyperapp/fx": "^0.7.0",
+    "breakpoint-sass": "^2.7.1",
     "hyperapp": "^1.2.6",
     "jsx-transform": "^2.4.0"
   },

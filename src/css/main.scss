@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
-
+@import '../../node_modules/breakpoint-sass/stylesheets/_breakpoint.scss';
 @font-face {
   font-family: "Orkley";
   src: url(https://firebasestorage.googleapis.com/v0/b/startupapparatus.appspot.com/o/Orkney-Regular.ttf?alt=media&token=6c5b9ea6-330a-4dbf-97ec-ac74d595a30e)
@@ -8,6 +8,8 @@
 
 $font-paragraph: "Orkley", sans-serif;
 $font-mono: "Source Code Pro", monospace;
+
+$desktop: 720px;
 
 body{
   margin: 0;
@@ -28,40 +30,165 @@ h1 {
 
 .landing-page .item-a {
   grid-column-start: 1;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  @include breakpoint($desktop) {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-row: 2;
+    grid-row-end: 4;
+  }
+}
+.bg {
+  background-color: #414042;
+  @include breakpoint($desktop) {
+    background: #275FB3;
+  }
 }
 
 .landing-page .item-b {
   grid-column-start: 2;
+  @include breakpoint($desktop) {
+    grid-row-start: 2;
+    grid-column-start: 3;
+  }
 }
 .landing-page .item-c {
   grid-column-start: 2;
+  @include breakpoint($desktop) {
+    grid-column-start: 3;
+    grid-row-start: 3;
+    grid-column-start: 3;
+    grid-column-end: 7;
+  }
 
 }
 
+.landing-page .item-d {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  align-self: end;
+  justify-self: center;
+  margin-bottom: 0;
+  @include breakpoint($desktop) {
+    grid-row-start: 7;
+    grid-column-start: 1;
+    grid-column-end: 7;
+  }
+}
+.landing-page .item-e {
+  @include breakpoint($desktop) {
+    grid-row-start: 5;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    max-width: 25rem;
+    line-height: 1.8;
+  }
+}
+
+.landing-page .item-f .button-style {
+  font: 100% $font-mono;
+  font-family: "Source Code Pro" monospace;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  padding-right: 0.5rem;
+  border-width: 0.1rem;
+  padding-top: 0.2rem;
+  padding-left: 0.3rem;
+  border-style: solid;
+  border-color: white;
+}
+.landing-page .item-f {
+  @include breakpoint($desktop) {
+    grid-row-start: 6;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    max-width: 25rem;
+  }
+}
+
 .landing-page {
-  background-color: #414042;
   color: white;
   display: grid;
   justify-content: stretch;
   grid-template-columns: 3rem auto;
-  grid-template-rows: 2rem 2rem 3rem auto 7rem;
+  grid-template-rows: 2rem 2rem 3rem auto 10% 10%;
 
+  @include breakpoint($desktop) {
+    grid-gap: 1rem;
+    background-size: cover;
+    background: radial-gradient(495.50px at 50% 50%, rgba(255, 255, 255, 0.12) 0%, rgba(196, 196, 196, 0) 100%) center center no-repeat;
+    z-index: 1;
+    grid-template-columns: 5% 6rem 30% auto 5rem 5% ;
+    grid-template-rows: 3rem 2rem 2rem 10% auto 20% auto 7%;
+  }
 }
 
-.quicklinks {
+
+
+.landing-page .top-right-icon {
+  @include breakpoint($desktop) {
+    grid-column-start: 6;
+    grid-row-start: 1;
+    justify-self: center;
+    align-self: center;
+  }
+}
+.landing-page .top-left-icon {
+  @include breakpoint($desktop) {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    justify-self: center;
+    align-self: center;
+  }
+}
+
+.landing-page .bottom-left-icon {
+  @include breakpoint($desktop) {
+    grid-column-start: 1;
+    grid-row-start: 8;
+    justify-self: center;
+    align-self: center;
+  }
+}
+.landing-page .bottom-right-icon {
+  @include breakpoint($desktop) {
+    grid-column-start: 6;
+    grid-row-start: 8;
+    justify-self: center;
+    align-self: center;
+  }
+}
+
+.landing-page .quicklink-a {
   grid-column-start: 2;
+  font: 100% $font-mono;
+  font-family: "Source Code Pro" monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  @include breakpoint($desktop) {
+    grid-column-start: 4;
+    grid-row-start: 2;
+    justify-self: end;
+    align-self: center;
+  }
 }
 
 .logo {
   width: 1.8rem;
-  grid-row: 1;
-  grid-row-end: 3;
   place-self: center;
+  @include breakpoint($desktop) {
+    width:4rem;
+  }
 }
 
 h2 {
   font: 100% $font-paragraph;
   margin-top: 0;
+  @include breakpoint($desktop) {
+    font: 2rem $font-paragraph;
+  }
 }
 
 .terminalBody {
@@ -70,6 +197,16 @@ h2 {
   grid-column-start: 1;
   grid-column-end: 3;
   align-self: end;
+  line-height: 1.5;
+  @include breakpoint($desktop) {
+    grid-row-start: 5;
+    grid-row-end: 7;
+    grid-column-start: 4;
+    grid-column-end: 6;
+    min-width: 50%;
+    align-self: start;
+    justify-self: left;
+  }
 }
 
 body {
@@ -83,7 +220,6 @@ body {
 }
 
 .scroll-down {
-  margin: auto;
   grid-column-start: 1;
   grid-column-end: 3;
   width: 32px;
@@ -93,8 +229,14 @@ body {
   animation: bounce 2s infinite 2s;
   -webkit-transition: all .2s ease-in;
   transition: all .2s ease-in;
-  align-self: start;
+  align-self: center;
   justify-self: center;
+  padding-left: 16px;
+  @include breakpoint($desktop) {
+    grid-row-start: 8;
+    grid-column-start: 1;
+    grid-column-end: 7;
+  }
 }
 
 .scroll-down:before {

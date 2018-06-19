@@ -3,7 +3,7 @@ import { switchcaseF, switchcase } from "../utils";
 import { reduce } from "ramda";
 
 // CONFIGURATION
-const historyLimit = 8;
+const historyLimit = 5;
 const loadingbarLength = 20;
 const sentenceList = [
   { sentence: "› Help me with design", mode: "TEXTINPUT" },
@@ -11,7 +11,7 @@ const sentenceList = [
   { sentence: "› Build a prototype for me", mode: "TEXTINPUT" },
   { sentence: "A prototype has been sent to your email", mode: "INSTANT" },
   { sentence: "› Help me with building a website", mode: "TEXTINPUT" },
-  { sentence: "Your website has launched 🚀", mode: "INSTANT" },
+  { sentence: "Building your website. 🚀", mode: "INSTANT" },
 ];
 
 const state = {
@@ -133,13 +133,13 @@ const actions = {
     })(invalidTodo)(state.todo)
 };
 
-const RenderSingleItem = ({ item, opacity }) => <p style={{opacity: opacity}}>{item}</p>;
+const RenderSingleItem = ({ item, opacity }) => <div style={{opacity: opacity, fontSize: "1.3rem"}}>{item}</div>;
 const RenderHistory = ({ history }) => {
   return history.map((it, index) => <RenderSingleItem item={it} opacity={(index+2)/(history.length+1)} />);
 };
 
 const view = ({ state }) => (
-  <div class="terminalBody" style={{padding: "1rem", maxWidth: state.width}}>
+  <div class="terminalBody" style={{padding: "1rem", maxWidth: state.width-70}}>
     <RenderHistory history={state.history} />
     <RenderSingleItem item={state.toWrite} />
   </div>

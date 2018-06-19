@@ -1,10 +1,10 @@
 import { h, app } from "hyperapp";
 import terminal from "./ components/terminal";
 import { switchcaseF, switchcase } from "./utils";
-import "./css/main"
-import logoImg1x from "./assets/logo.png"
-import logoImg2x from "./assets/logo-2x.png"
-import logoImg3x from "./assets/logo-3x.png"
+import "./css/main";
+import logoImg1x from "./assets/logo.png";
+import logoImg2x from "./assets/logo-2x.png";
+import logoImg3x from "./assets/logo-3x.png";
 
 export const state = {
   width: window.innerWidth,
@@ -14,22 +14,71 @@ export const state = {
 };
 
 export const actions = {
-  updateWindowWidth: width => state =>
-    width < 760
-      ? { maxWidth: width, mode: "MOBILE" }
-      : { maxWidth: width, mode: "DESKTOP" },
+  updateWindowWidth: width => state => {
+    return width > 760
+      ? { maxWidth: width, mode: "DESKTOP" }
+      : { maxWidth: width, mode: "MOBILE" };
+  },
   updateWindowHeight: height => state => ({ maxHeight: height }),
   terminal: terminal.actions
 };
 
+const TopLeftImg = () => (
+  <svg width="66" height="66" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 64V0H64" transform="translate(2 2)" stroke="white" stroke-opacity="0.6" stroke-width="3"/>
+</svg>
+);
+
+const TopRightImg = () => (
+<svg class="top-right-icon" width="66" height="66" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 64V0H64" transform="translate(64 2) scale(-1 1)" stroke="white" stroke-opacity="0.6" stroke-width="3"/>
+</svg>
+);
+
+const BottomLeftImg = () => (
+<svg width="66" height="66" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 64V0H64" transform="translate(2 64) scale(1 -1)" stroke="white" stroke-opacity="0.6" stroke-width="3"/>
+</svg>
+);
+
+const BottomRightImg = () => (
+<svg width="66" height="66" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 64V0H64" transform="translate(64 64) rotate(-180)" stroke="white" stroke-opacity="0.6" stroke-width="3"/>
+</svg>
+);
+
+
 export const view = (state, actions) => (
-  <main class="landing-page" style={{width: state.width, height: state.height}} >
-    <img class="logo item-a" src={logoImg1x} srcset={logoImg1x + ' 1x,' + logoImg2x + ' 2x,' + logoImg3x + ' 3x' }/>
+  <main
+    class="bg"
+    style={{ width: state.width, height: state.height }}
+  >
+    <div class="landing-page" 
+    style={{ width: state.width, height: state.height }} >
+    <img
+      class="logo item-a"
+      src={logoImg1x}
+      srcset={logoImg1x + " 1x," + logoImg2x + " 2x," + logoImg3x + " 3x"}
+    />
     <h1 class="item-b">Startup Apparatus</h1>
     <h2 class="item-c">Helping startups with tech and design</h2>
 
-    <p class="quicklinks">Here's some paragraph text</p>
+    <p class="quicklink-a">»The team</p>
+    {state.mode === "DESKTOP" ? 
+      <p class="item-e">
+      You can think of us as an incubator. 
+      A way to ignite your startup journey. We teach you how to design a valuable startups for free. 
+      This way you can validate and raise the capital needed to make your idea a reality. We help you build it.</p> 
+      : ''}
+    {state.mode === "DESKTOP" ? 
+      <div class="item-f"><a class="button-style">»Contact us</a></div>   : ''}
+
+    {state.mode === "DESKTOP" ? 
+      <TopRightImg class="top-right-icon"/> : ''}
+
     <terminal.view class="terminalBody" state={state.terminal} />
-    <a href="#" class="scroll-down"></a>
+    <p class="item-d">Scroll to learn more</p>
+    <a href="#" class="scroll-down" />
+    </div>
   </main>
 );

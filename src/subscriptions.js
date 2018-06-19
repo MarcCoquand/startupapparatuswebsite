@@ -9,10 +9,12 @@
  **/
 
 export default main => {
+    setInterval(() => {main.terminal.step()}, 50)
+    main.updateWindowWidth(window.innerWidth)
+    main.updateWindowHeight(window.innerHeight)
     window.addEventListener("resize", 
         () => {
             main.updateWindowWidth(window.innerWidth)
             main.updateWindowHeight(window.innerHeight)
         });
-    setInterval(() => main.terminal.step(), 50)
 };
