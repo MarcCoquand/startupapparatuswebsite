@@ -110,7 +110,7 @@ export default ({ state, actions }) => (
     <Entry
       text={entryText}
       isFirst={true}
-      title="The first meeting: figure it out"
+      title="The first meeting"
       clickForward={actions.stepperNext}
       clickBackward={actions.stepperPrev}
       sideImg="src/first.png"
