@@ -19,10 +19,10 @@ export const state = {
 export const actions = {
   updateWindowWidth: width => state => {
     return width > 760
-      ? { maxWidth: width, mode: "DESKTOP" }
-      : { maxWidth: width, mode: "MOBILE" };
+      ? { width: width, mode: "DESKTOP" }
+      : { width: width, mode: "MOBILE" };
   },
-  updateWindowHeight: height => state => ({ maxHeight: height }),
+  updateWindowHeight: height => state => ({ height: height }),
   stepperNext: () => state => ({stepperPage: (state.stepperPage % state.stepperMax)+1}),
   stepperPrev: () => state => ({stepperPage: (state.stepperPage-1) % state.stepperMax}),
   terminal: terminal.actions
