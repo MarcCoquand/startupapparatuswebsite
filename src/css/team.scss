@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Mono');
+@import '../../node_modules/breakpoint-sass/stylesheets/_breakpoint.scss';
+@font-face {
+  font-family: "Orkley";
+  src: url(https://firebasestorage.googleapis.com/v0/b/startupapparatus.appspot.com/o/Orkney-Regular.ttf?alt=media&token=6c5b9ea6-330a-4dbf-97ec-ac74d595a30e)
+    format("truetype");
+}
+
+$font-paragraph: "Orkley", sans-serif;
+$font-mono: "PT Mono", monospace;
+
+$desktop: 720px;
+$hd: 1080px;
+
+body{
+  margin: 0;
+}
+
+.team .header-box {
+  background-color: #289AA9;
+  color: white;
+  width: 95%;
+}
+.team h3 {
+  font: 100% $font-mono;
+  font-family: "PT Mono" monospace;
+  font-size: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: right;
+  padding-right: 18%;
+  margin-bottom: 0.3rem;
+  @include breakpoint($desktop) {
+    font-size: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+  }
+  @include breakpoint($hd) {
+    font-size: 3rem;
+  }
+}
+
+.team h4 {
+  margin: auto;
+  background: #E8402E;
+  color: white;
+  text-align: center;
+  max-width: 9rem;
+  margin-top: 2rem;
+  padding: 0.3rem;
+  padding-left: 0.07rem;
+  padding-right: 0.07rem;
+  font-size: 1.0rem;
+  font-weight: 100;
+  @include breakpoint($desktop) {
+    font-size: 1.3rem;
+  }
+
+}
+
+.team p {
+  padding: 1rem;
+  max-width: 30rem;
+  margin: auto;
+  line-height: 1.6;
+  margin-top: 2rem;
+  @include breakpoint($desktop) {
+    padding-top: 1rem;
+    padding-bottom: 5rem;
+    text-align: center;
+  }
+}

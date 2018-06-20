@@ -1,6 +1,7 @@
 import { h, app } from "hyperapp";
 import { switchcaseF, switchcase } from "../utils";
 import { reduce } from "ramda";
+import Stepper from "./stepper"
 
 // CONFIGURATION
 const historyLimit = 5;
@@ -37,7 +38,7 @@ const pushHistory = (historyArray, newEntry, limit) =>
 const stepInstant = ({ sentence, mode }, historyArray, nextSentences) => ({
   toWrite: "",
   history: pushHistory(historyArray, sentence, historyLimit),
-  waitTimer: 40,
+  waitTimer: 160,
   todo: "WAIT",
   sentenceList: nextSentences.concat({ sentence, mode })
 });
@@ -61,7 +62,7 @@ const stepLetter = (toWrite, sentence, nextSentences, historyArray) => {
           mode: "TEXTINPUT"
         }),
         toWrite: "",
-        waitTimer: 20,
+        waitTimer: 80,
         todo: "WAIT"
       };
 };
@@ -138,7 +139,7 @@ const RenderHistory = ({ history }) => {
   return history.map((it, index) => <RenderSingleItem item={it} opacity={(index+2)/(history.length+1)} />);
 };
 
-const view = ({ state }) => (
+const view = ({ state, actions }) => (
   <div class="terminalBody" style={{padding: "1rem", maxWidth: state.width-70}}>
     <RenderHistory history={state.history} />
     <RenderSingleItem item={state.toWrite} />

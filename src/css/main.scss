@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+@import url('https://fonts.googleapis.com/css?family=PT+Mono');
 @import '../../node_modules/breakpoint-sass/stylesheets/_breakpoint.scss';
 @font-face {
   font-family: "Orkley";
@@ -7,7 +7,7 @@
 }
 
 $font-paragraph: "Orkley", sans-serif;
-$font-mono: "Source Code Pro", monospace;
+$font-mono: "PT Mono", monospace;
 
 $desktop: 720px;
 
@@ -15,9 +15,11 @@ body{
   margin: 0;
 }
 
-h1 {
+.landing-page h1 {
   font: 100% $font-mono;
-  font-family: "Source Code Pro" monospace;
+  margin: 0;
+  align-self: center;
+  font-family: "PT Mono" monospace;
   text-transform: uppercase;
   margin-bottom: 0.3rem;
 }
@@ -89,13 +91,14 @@ h1 {
 
 .landing-page .item-f .button-style {
   font: 100% $font-mono;
-  font-family: "Source Code Pro" monospace;
+  font-family: "PT Mono" monospace;
   text-transform: uppercase;
   font-size: 1.6rem;
-  padding-right: 0.5rem;
+  padding-right: 0.8rem;
   border-width: 0.1rem;
   padding-top: 0.2rem;
-  padding-left: 0.3rem;
+  padding-bottom: 0.2rem;
+  padding-left: 0.5rem;
   border-style: solid;
   border-color: white;
 }
@@ -164,7 +167,7 @@ h1 {
 .landing-page .quicklink-a {
   grid-column-start: 2;
   font: 100% $font-mono;
-  font-family: "Source Code Pro" monospace;
+  font-family: "PT Mono" monospace;
   font-size: 0.8rem;
   text-transform: uppercase;
   @include breakpoint($desktop) {
@@ -183,7 +186,7 @@ h1 {
   }
 }
 
-h2 {
+.landing-page h2 {
   font: 100% $font-paragraph;
   margin-top: 0;
   @include breakpoint($desktop) {
@@ -193,7 +196,7 @@ h2 {
 
 .terminalBody {
   font: 100% $font-mono;
-  font-family: "Source Code Pro" monospace;
+  font-family: "PT Mono" monospace;
   grid-column-start: 1;
   grid-column-end: 3;
   align-self: end;

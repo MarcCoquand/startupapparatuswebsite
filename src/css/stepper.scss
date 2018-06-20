@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Mono');
+@import '../../node_modules/breakpoint-sass/stylesheets/_breakpoint.scss';
+@font-face {
+  font-family: "Orkley";
+  src: url(https://firebasestorage.googleapis.com/v0/b/startupapparatus.appspot.com/o/Orkney-Regular.ttf?alt=media&token=6c5b9ea6-330a-4dbf-97ec-ac74d595a30e)
+    format("truetype");
+}
+
+$font-paragraph: "Orkley", sans-serif;
+$font-mono: "PT Mono", monospace;
+
+$desktop: 720px;
+$hd: 1080px;
+
+.stepper .dot {
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  left: -12.5px;
+  top: 8.0px;
+}
+.stepper .dot-active {
+  background-color: #1FB8CC;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  left: -12.5px;
+  top: 8.0px;
+}
+.stepper {
+  margin: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  @include breakpoint($desktop) {
+    padding-left: 0rem;
+    padding-right: 0rem;
+    max-width: 35rem;
+  }
+}
+
+.stepper .content-wrapper {
+  text-align: left;
+  border-left: solid 2px;
+
+  padding-bottom: 1rem;
+}
+
+.stepper .last {
+  padding-bottom: 0rem;
+
+}
+
+.stepper .content-text {
+  text-align: left;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+  margin:0;
+  transition: max-height 0.2s ease-out;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+.stepper .header-text {
+  font: 100% $font-mono;
+  font-family: "PT Mono" monospace;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: left;
+}
+
+.stepper .button-style {
+  margin-left: 2rem;
+  border: none;
+  font-size: 1.1rem;
+  letter-spacing: 0.10rem;
+  text-decoration: none;
+  font-family: "PT Mono" monospace;
+  text-transform: uppercase;
+  font-weight: bold;
+
+}
