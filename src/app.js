@@ -2,6 +2,7 @@ import { h, app } from "hyperapp";
 import terminal from "./components/terminal";
 import { switchcaseF, switchcase } from "./utils";
 import "./css/main";
+import Features from "./components/features";
 import Team from "./components/team";
 import logoImg1x from "./assets/logo.png";
 import logoImg2x from "./assets/logo-2x.png";
@@ -139,9 +140,10 @@ export const view = (state, actions) => (
 
         <terminal.view class="terminalBody" state={state.terminal} />
         <p class="item-d">Scroll to learn more</p>
-        <a href="#" class="scroll-down" />
+        <a href="#features" class="scroll-down" />
       </div>
     </div>
-    <Team state={state} actions={actions}/>
+    <Features state={state} actions={actions}/>
+    <Team  state={state} actions={actions}/>
   </main>
 );
