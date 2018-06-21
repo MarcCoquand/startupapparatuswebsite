@@ -4,15 +4,15 @@ import { reduce } from "ramda";
 import Stepper from "./stepper"
 
 // CONFIGURATION
-const historyLimit = 5;
+const historyLimit = 3;
 const loadingbarLength = 20;
 const sentenceList = [
   { sentence: "› Help me with design", mode: "TEXTINPUT" },
-  { sentence: "A suggestion for how to work with the design has been sent to you", mode: "INSTANT" },
-  { sentence: "› Build a prototype for me", mode: "TEXTINPUT" },
-  { sentence: "A prototype has been sent to your email", mode: "INSTANT" },
+  { sentence: "› Help me with tech development", mode: "TEXTINPUT" },
   { sentence: "› Help me with building a website", mode: "TEXTINPUT" },
-  { sentence: "Building your website. 🚀", mode: "INSTANT" },
+  { sentence: "› Help me with building an app", mode: "TEXTINPUT" },
+  { sentence: "› Help me with validating a product", mode: "TEXTINPUT" },
+  { sentence: "› Help me with UX strategy", mode: "TEXTINPUT" },
 ];
 
 const state = {

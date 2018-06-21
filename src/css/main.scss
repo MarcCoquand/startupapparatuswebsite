@@ -51,6 +51,7 @@ body{
 
 .landing-page .item-b {
   grid-column-start: 2;
+  letter-spacing: 0.10rem;
   @include breakpoint($desktop) {
     grid-row-start: 2;
     grid-column-start: 3;
@@ -123,7 +124,7 @@ body{
     background-size: cover;
     background: radial-gradient(495.50px at 50% 50%, rgba(255, 255, 255, 0.12) 0%, rgba(196, 196, 196, 0) 100%) center center no-repeat;
     z-index: 1;
-    grid-template-columns: 5% 6rem 30% auto 5rem 5% ;
+    grid-template-columns: 5% 6rem 30% auto 6rem 5% ;
     grid-template-rows: 3rem 2rem 2rem 10% auto 20% auto 7%;
   }
 }
@@ -166,9 +167,11 @@ body{
 
 .landing-page .quicklink-a {
   grid-column-start: 2;
-  font: 100% $font-mono;
+  border: none;
+  font-size: 0.9rem;
+  color: white;
+  text-decoration: none;
   font-family: "PT Mono" monospace;
-  font-size: 0.8rem;
   text-transform: uppercase;
   @include breakpoint($desktop) {
     grid-column-start: 4;

@@ -16,10 +16,10 @@ body{
   margin: 0;
 }
 
-.team .header-box {
+.footer .header-box {
   width: 100%;
 }
-.team h3 {
+.footer h3 {
   font: 100% $font-mono;
   font-family: "PT Mono" monospace;
   font-size: 1rem;
@@ -42,7 +42,7 @@ body{
   }
 }
 
-.team h4 {
+.footer h4 {
   margin: auto;
   background: #E8402E;
   color: white;
@@ -60,7 +60,7 @@ body{
 
 }
 
-.team p {
+.footer p {
   padding: 1rem;
   max-width: 30rem;
   margin: auto;
@@ -75,28 +75,28 @@ body{
 
 
 
-.team .members {
+.footer .members {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-.team .profile-container {
+.footer .profile-container {
   width: 15%;
   margin: 1rem
 }
-.team .profile-text {
+.footer .profile-text {
   font: 100% $font-paragraph;
   font-size: 1.1rem;
   margin-top: 5rem;
   width: 300%;
   margin: auto;
 }
-.team .profile-text-container {
+.footer .profile-text-container {
   margin-top: 2rem;
   transform: rotate(-90deg);
   margin-bottom: 55%;
 }
-.team .profile-img {
+.footer .profile-img {
   display: block;
   margin-left: auto;
   margin-right: auto;

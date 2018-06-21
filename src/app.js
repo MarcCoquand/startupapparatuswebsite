@@ -4,6 +4,7 @@ import { switchcaseF, switchcase } from "./utils";
 import "./css/main";
 import Features from "./components/features";
 import Team from "./components/team";
+import Contact from "./components/contact";
 import logoImg1x from "./assets/logo.png";
 import logoImg2x from "./assets/logo-2x.png";
 import logoImg3x from "./assets/logo-3x.png";
@@ -117,7 +118,7 @@ export const view = (state, actions) => (
         <h1 class="item-b">Startup Apparatus</h1>
         <h2 class="item-c">Helping startups with tech and design</h2>
 
-        <p class="quicklink-a">» The team</p>
+        <a class="quicklink-a" href="#team">» The team</a>
         {state.mode === "DESKTOP" ? (
           <p class="item-e">
             You can think of us as an incubator. A way to ignite your startup
@@ -139,11 +140,12 @@ export const view = (state, actions) => (
         {state.mode === "DESKTOP" ? <TopRightImg class="top-right-icon" /> : ""}
 
         <terminal.view class="terminalBody" state={state.terminal} />
-        <p class="item-d">Scroll to learn more</p>
+        <p class="item-d">Scroll to learn how we work</p>
         <a href="#features" class="scroll-down" />
       </div>
     </div>
     <Features state={state} actions={actions}/>
-    <Team  state={state} actions={actions}/>
+    <Team state={state} actions={actions}/>
+    <Contact.view state={state} actions={actions}/>
   </main>
 );

@@ -9,7 +9,8 @@
  **/
 
 export default main => {
-    setInterval(() => {main.terminal.step()}, 50)
+    // if (process.env.NODE_ENV === "production") 
+        setInterval(() => {main.terminal.step()}, 50)
     main.updateWindowWidth(window.innerWidth)
     main.updateWindowHeight(window.innerHeight)
     window.addEventListener("resize", 
